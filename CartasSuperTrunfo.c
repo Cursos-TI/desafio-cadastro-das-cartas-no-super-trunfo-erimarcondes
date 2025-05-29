@@ -18,6 +18,8 @@ int main(){
 
     int pontos1, pontos2;
 
+    float super_poder1, super_poder2;
+
     printf("Cadastro de cartas - Super Trunfo\n");
 
     // Entrada de dados - Cidade 1
@@ -109,6 +111,21 @@ int main(){
     printf("\nNúmero de Pontos Turísticos: %d", pontos2);
     printf("\nDensidade Populacional: %.2f hab/km2", densidade2);
     printf("\nPIB per Capita: %.2f reais", pibpc2);
+
+    // Cálculo do Super Poder
+    super_poder1 = (float)(populacao1 + area1 + pib1 + pibpc1 +(1/densidade1) + pontos1);
+    super_poder2 = (float)(populacao2 + area2 + pib2 + pibpc2 +(1/densidade2) + pontos2);
+
+    // Comparação das cartas
+    printf(" \nComparação das Cartas");
+    printf("\n1 = Carta 1 | 0 = Carta 2");
+    printf("População: %d", (int)populacao1 > populacao2);
+    printf("Área: %d", area1 > area2);
+    printf("PIB: %d", pib1 > pib2);
+    printf("Pontos Turísticos: %d", pontos1 > pontos2);
+    printf("Densidade Populacional: %d", densidade1 < densidade2);
+    printf("PIB per Capita: %d", pibpc1 > pibpc2);
+    printf("Super Poder: %d", super_poder1 > super_poder2);
 
     return 0;
 }
